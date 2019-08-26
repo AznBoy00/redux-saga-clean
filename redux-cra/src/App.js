@@ -1,24 +1,28 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import logo from './logo.svg';
 import './App.css';
 
-import { simpleAction } from './actions/simpleAction'
+import { simpleAction } from './actions/simpleAction';
 
-/* 
+/*
  * mapDispatchToProps
 */
-const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
-})
+const mapDispatchToProps = (dispatch) => ({
+  simpleAction: () => dispatch(simpleAction()),
+});
 
-/* 
+/*
  * mapStateToProps
 */
-const mapStateToProps = state => ({
-  ...state
-})
+const mapStateToProps = (state) => ({
+  ...state,
+});
 
 /**
  * @class App
@@ -27,9 +31,9 @@ const mapStateToProps = state => ({
 class App extends Component {
   /**
    * @memberof App
-   * @summary handles button click 
+   * @summary handles button click
    */
-  simpleAction = (event) => {
+  simpleAction = () => {
     this.props.simpleAction();
   }
 
@@ -47,7 +51,11 @@ class App extends Component {
         </pre>
         <button onClick={this.simpleAction}>Test redux action</button>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          To get started, edit
+          {' '}
+          <code>src/App.js</code>
+          {' '}
+and save to reload.
         </p>
       </div>
     );
